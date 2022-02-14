@@ -62,7 +62,7 @@ type ViewSnake struct {
 	Squad      string      `json:"Squad"`
 	APIVersion string      `json:"APIVersion"`
 	Author     string      `json:"Author"`
-	Death      ViewDeath   `json:"Death"`
+	Death      ViewDeath   `json:"Death,omitempty"`
 }
 
 type ViewDeath struct {

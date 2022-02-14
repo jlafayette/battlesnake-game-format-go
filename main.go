@@ -212,6 +212,9 @@ func (game *ViewGame) ToMove(turn int32, snakeId string) (*MoveGameState, error)
 	var you *MoveBattlesnake
 	var snakes []MoveBattlesnake = make([]MoveBattlesnake, 0, len(frame.Snakes))
 	for _, frameSnake := range frame.Snakes {
+		if frameSnake.Death.Cause != "" {
+			continue
+		}
 		if snakeId == frameSnake.ID {
 			you = &MoveBattlesnake{
 				ID:      frameSnake.ID,
